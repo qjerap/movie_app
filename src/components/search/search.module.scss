@@ -1,0 +1,55 @@
+@import "../../sass/mixins";
+
+.search {
+  position: relative;
+  width: 80%;
+
+  input {
+    position: relative;
+    border: none;
+    background-color: rgba($color: #000000, $alpha: 0.05);
+    border-radius: 0.25rem;
+    padding: 1.25rem;
+    color: var(--color-red);
+    font-size: 1.75rem;
+    width: 100%;
+  }
+
+  input::placeholder {
+    color: rgba($color: #000000, $alpha: 0.3);
+  }
+
+  input:hover {
+    outline: gainsboro 1px solid;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  input:focus::placeholder {
+    color: transparent;
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    font-size: var(--font-2xl);
+    color: rgba($color: #000000, $alpha: 0.3);
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  svg:hover {
+    color: var(--color-red);
+  }
+}
+
+.searchNav {
+  width: 30rem;
+  @include respond(phone) {
+    display: none;
+  }
+}

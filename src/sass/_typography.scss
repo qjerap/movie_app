@@ -1,0 +1,37 @@
+* {
+  font-family: "Roboto";
+}
+
+h1 {
+  border-left: 0.5rem solid var(--color-red);
+  padding-left: 1rem;
+  font-family: var(--font-main);
+  font-weight: 900;
+  font-size: var(--font-3xl);
+  opacity: 0.65;
+
+  @include respond(tab-port) {
+    font-size: var((--font-2xl));
+  }
+}
+
+h2 {
+  font-family: var(--font-main);
+  font-weight: 900;
+  font-size: var(--font-2xl);
+  @include respond(tab-port) {
+    font-size: var((--font-xl));
+  }
+}
+
+h3 {
+  font-size: var(--font-xl);
+  opacity: 0.45;
+  font-weight: 900;
+}
+
+h4 {
+  font-size: var(--font-l);
+  opacity: 0.55;
+  font-weight: 900;
+}

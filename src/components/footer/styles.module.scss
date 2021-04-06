@@ -1,0 +1,12 @@
+.footer {
+    height: 30rem;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-top);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: fit-content;
+}

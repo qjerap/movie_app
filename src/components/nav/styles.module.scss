@@ -1,0 +1,13 @@
+@import "../../sass/mixins";
+
+.container {
+  box-shadow: var(--shadow-bottom);
+  background-color: var(--color-white);
+}
+
+.nav {
+  display: flex;
+  //   justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}

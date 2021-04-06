@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@100;400;700&display=swap");
+
+:root {
+  
+  --color-white-150: rgba(255, 255, 255, 0.15);
+  --color-white-500: rgba(255, 255, 255, 0.5);
+  --color-white: #ffffff;
+  
+  
+  --color-green: #438945;
+  --color-yellow: #eba63f;
+  --color-blue: #3cbcc3;
+  --color-red: #e40c2b;
+
+
+
+  --color-black-350: rgba(0, 0, 0, 0.25);
+  --color-black-500: rgba(0, 0, 0, 0.5);
+  --color-black: #222222;
+
+
+  --color-bg-200: #f7f4e9;
+  --color-bg-400: #2f2f3a;
+  --color-bg-500: #1d1d2c;
+
+  //FONT-FAMILY
+
+  --font-accent: "Fredoka One";
+  --font-main: "Roboto";
+
+  //FONT-SIZE
+  --font-s: 1rem;
+  --font-m: 1.25rem;
+  --font-l: 1.5rem;
+  --font-xl: 2rem;
+  --font-2xl: 3rem;
+  --font-3xl: 4rem;
+
+
+  //SHADOW
+  --shadow-bottom: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+  --shadow-top: 0px -5px 35px 0px rgba(0, 0, 0, 0.07);
+  --shadow-top2: 0px -5px 35px 0px rgba(0, 0, 0, 0.2);
+}
+
+.darkmode {
+  --bg: black;
+}

@@ -1,0 +1,14 @@
+.logo {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  background-color: var(--color-red);
+  padding: .5rem;
+  border-radius: .5rem;
+
+  a {
+    color: var(--color-white);
+    font-family: var(--font-accent);
+    font-size: var(--font-2xl);
+    border-radius: 4rem;
+  }
+}

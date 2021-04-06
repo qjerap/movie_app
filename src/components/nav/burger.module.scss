@@ -1,0 +1,16 @@
+@import "../../sass/mixins";
+
+.burger {
+  display: none;
+  margin-left: auto;
+  cursor: pointer;
+
+  @include respond(phone) {
+    display: block;
+  }
+
+  svg {
+    font-size: var(--font-2xl);
+    color: var(--color-red);
+  }
+}
