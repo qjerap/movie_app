@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { slideHorizontal as variants } from "../../tool/MotionVariants";
 
 export const Watch = ({ watch }) => {
+
+
   return (
     <motion.div
       initial="hidden"

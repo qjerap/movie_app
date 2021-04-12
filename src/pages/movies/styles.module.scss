@@ -1,7 +1,7 @@
 @import "../../sass/mixins";
 
 .movies {
-  margin: 5rem 0;
+  margin: 10rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, 250px);
   place-content: center;
@@ -17,9 +17,9 @@
   // @include respond(tab-port) {
   //   grid-template-columns: repeat(3, 1fr);
   // }
-  // @include respond(phone) {
-  //   grid-template-columns: repeat(2, 1fr);
-  // }
+  @include respond(phone) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .movie {
@@ -50,6 +50,11 @@
     transition: box-shadow 0.3s;
     width: 250px;
     height: 375px;
+
+    @include respond(phone) {
+      width: 100%;
+      height: 90%;
+    }
   }
 
   &:hover img {

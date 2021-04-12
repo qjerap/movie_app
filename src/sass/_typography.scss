@@ -12,6 +12,7 @@ h1 {
 
   @include respond(tab-port) {
     font-size: var((--font-2xl));
+
   }
 }
 
