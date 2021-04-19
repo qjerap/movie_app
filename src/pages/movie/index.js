@@ -8,7 +8,7 @@ import DetailsLinks from "./detailsLinks.js";
 import Cast from "./cast.js";
 import Trailer from "./trailer.js";
 import Watch from "./watch.js";
-import Movies from "../movies/index";
+import Movies from "../../components/moviesList/moviesCarousel.js";
 
 import styles from "./styles.module.scss";
 import ScrollToTopOnMount from "../../tool/ScrollToTopOnMount";
@@ -87,7 +87,9 @@ export const Movie = () => {
               links={["You might also like"]}
               activeLink={"you might also like"}
             />
-            <Movies movies={movie.similar?.results} quantity={5} />
+            <div className="container">
+              <Movies movies={movie.similar?.results} quantity={10} />
+            </div>
           </div>
         )}
       </motion.div>

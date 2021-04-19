@@ -30,11 +30,13 @@ li {
 
 body {
   max-width: 100vw;
+  min-height: 100vh;
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
+  overflow: hidden;
 
   @include respond(tab-land) {
     width: 90%;
@@ -49,8 +51,6 @@ body {
   margin-bottom: 5rem;
 
   @include respond(tab-port) {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
   }
 }
 
@@ -60,3 +60,19 @@ body {
 //   opacity: 1;
 //   border-bottom: 1px solid red;
 // }
+
+.embla {
+  // overflow: hidden;
+  margin: 5rem 0;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+  max-width: fit-content;
+  margin: 0 1rem;
+}

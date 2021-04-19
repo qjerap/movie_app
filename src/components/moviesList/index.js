@@ -5,26 +5,22 @@ import { slideUp } from "../../tool/MotionVariants";
 
 import styles from "./styles.module.scss";
 
-export const Movies = ({ title, url, movies, quantity = 99 }) => {
+export const Movies = ({ url, movies, quantity = 99 }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     if (url) {
-      fetch(
-        `https://api.themoviedb.org/3/movie/upcoming?api_key=27530fdbc7f1713e26852c635183cc82&language=en-US&page=1`
-      )
+      fetch(url)
         .then((res) => res.json())
         .then((data) => setData(data.results));
-    } 
-     if (movies) {
+    }
+    if (movies) {
       setData(movies);
     }
   }, []);
 
   return (
     <motion.div className="container margin-T-B">
-      <h1>{title}</h1>
-
       <div className={styles.movies}>
         {data.map((mov, index) => {
           if (quantity > index) {
