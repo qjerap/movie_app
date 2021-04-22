@@ -69,6 +69,7 @@
   }
 
   .poster {
+    margin-top: 5rem;
     flex-basis: 40%;
     width: 100%;
     position: relative;
@@ -78,6 +79,11 @@
     @include respond(tab-land) {
       width: 100%;
       flex-basis: 60%;
+
+    }
+    @include respond(phone) {
+      margin-top: 0;
+
     }
 
     img {

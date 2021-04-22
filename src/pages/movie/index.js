@@ -19,12 +19,10 @@ export const Movie = () => {
   const id = params.id;
 
   const [movie, setMovie] = useState({});
-  console.log(movie);
+  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=27530fdbc7f1713e26852c635183cc82&language=en-US&append_to_response=videos,credits,similar,watch/providers`;
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=27530fdbc7f1713e26852c635183cc82&language=en-US&append_to_response=videos,credits,similar,watch/providers`
-    )
+    fetch(url)
       .then((res) => res.json())
       .then((data) => setMovie(data));
   }, []);

@@ -46,7 +46,7 @@ export const Movies = ({ title, url, movies, quantity = 99 }) => {
 
   return (
     <motion.div className="">
-      { data[0] &&
+      {data[0] && (
         <Carousel>
           {data.map((mov, index) => {
             if (quantity > index) {
@@ -72,14 +72,14 @@ export const Movies = ({ title, url, movies, quantity = 99 }) => {
                       alt=""
                       width="200px"
                     />
-                    <h1>{mov.title}</h1>
+                    <h1>{mov.title || mov.name}</h1>
                   </motion.div>
                 </Link>
               );
             }
           })}
         </Carousel>
-      }
+      )}
     </motion.div>
   );
 };

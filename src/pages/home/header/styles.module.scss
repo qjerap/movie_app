@@ -2,18 +2,19 @@
   margin-bottom: 5rem;
 }
 
-.header__grid {
+.grid {
   display: grid;
   grid-template-columns: 1fr 0.5fr 0.5fr;
   grid-template-rows: 1fr 1fr;
   gap: 0.2rem;
 }
 
-.header__grid > div {
+.grid > div {
   cursor: pointer;
   transition: all 0.2s;
   overflow: hidden;
   background-color: black;
+  position: relative;
 
   img {
     object-fit: cover;
@@ -22,13 +23,16 @@
   }
 }
 
-.header__grid > div:hover {
+.grid > div:hover {
   img {
-    transform: scale(1.05);
     opacity: 0.8;
+  }
+
+  .item_info {
+    bottom: 0;
   }
 }
 
-.header__grid_item_main {
+.card_main {
   grid-row: 1 / span 2;
 }

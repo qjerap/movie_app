@@ -15,52 +15,51 @@ export default () => {
 
   return (
     <div className={styles.header}>
-      <div className={styles.header__grid}>
-        <div className={styles.header__grid_item_main}>
-          {data[0] && (
+      {data[5] && (
+
+
+        <div className={styles.grid}>
+
+
+          <div className={styles.card_main}>
             <img
               src={`https://image.tmdb.org/t/p/original/${data[0].backdrop_path}`}
               alt=""
             />
-          )}
-        </div>
-        <div className={styles.header__grid_item}>
-          {" "}
-          {data[0] && (
+          </div>
+
+
+
+          <div className={styles.header__grid_item}>
+            {" "}
             <img
               src={`https://image.tmdb.org/t/p/w500/${data[1].backdrop_path}`}
               alt=""
             />
-          )}
-        </div>
-        <div className={styles.header__grid_item}>
-          {" "}
-          {data[0] && (
+          </div>
+          <div className={styles.header__grid_item}>
+            {" "}
             <img
               src={`https://image.tmdb.org/t/p/w500/${data[2].backdrop_path}`}
               alt=""
             />
-          )}
-        </div>
-        <div className={styles.header__grid_item}>
-          {" "}
-          {data[0] && (
+          </div>
+          <div className={styles.header__grid_item}>
+            {" "}
             <img
               src={`https://image.tmdb.org/t/p/w500/${data[3].backdrop_path}`}
               alt=""
-            />
-          )}
-        </div>
-        <div className={styles.header__grid_item}>
-          {" "}
-          {data[0] && (
+            />{" "}
+          </div>
+          <div className={styles.header__grid_item}>
+            {" "}
             <img
               src={`https://image.tmdb.org/t/p/w500/${data[4].backdrop_path}`}
               alt=""
-            />
-          )}
+            />{" "}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

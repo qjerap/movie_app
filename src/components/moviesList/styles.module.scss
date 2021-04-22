@@ -45,6 +45,8 @@
 
     @include respond(tab-port) {
       opacity: 1;
+      font-size: var(--font-l);
+
     }
   }
 
