@@ -45,7 +45,7 @@ export const Movies = ({ title, url, movies, quantity = 99 }) => {
   }, [embla, onSelect]);
 
   return (
-    <motion.div className="">
+    <motion.div className={styles.movies}>
       {data[0] && (
         <Carousel>
           {data.map((mov, index) => {

@@ -3,15 +3,14 @@
 .topMovies {
   display: flex;
   flex-direction: row;
-  padding: 10rem 0;
+  padding: 2rem 0 6rem;
   gap: 4rem;
 
   img {
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     box-shadow: var(--shadow-bottom);
     transition: opacity 0.5s;
     background-color: black;
-
   }
 
   @include respond(tab-port) {
@@ -38,7 +37,7 @@
   width: 65%;
   cursor: pointer;
   transition: transform 0.3s;
-  //   overflow: hidden;
+  // overflow: hidden;
 
   img {
     height: 80%;
@@ -47,30 +46,48 @@
     object-position: top;
   }
 
-  & > div {
+  .mainCard_info {
     position: relative;
-    width: 90%;
-    height: 20rem;
-    border-radius: 0.5rem;
-    background-color: white;
-    margin: -5rem auto;
+    // position: absolute;
+    // bottom: 5%;
+    // left: 50%;
+    // transform: translateX(-50%);
+    width: 97.5%;
+    // height: 15rem;
+    border-radius: 0.25rem;
+    background-color: #f7f7f7;
+    margin: -3rem auto;
     box-shadow: var(--shadow-bottom);
     padding: 1rem 5rem;
+    transition: all 0.3s;
 
     & div:first-child {
+      margin-top: 1rem;
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    h1 {
+      font-size: var(--font-xl);
+      margin: 0;
     }
 
     p {
       font-size: var(--font-l);
+      color: #222;
+      line-height: 1.9rem;
+    }
+
+    .rating,
+    svg {
+      font-size: 2.5rem;
     }
   }
 }
 
-.left:hover {
-  transform: translate(.25rem,-0.25rem);
-
+.left:hover .mainCard_info {
+  transform: translate(0rem, -1rem);
 }
 
 .right {
@@ -97,14 +114,23 @@
     justify-content: space-between;
     gap: 2rem;
     padding: 0 5rem;
-    // border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
     transition: all 0.3s;
-    border-radius: 0;
+    opacity: 0;
+    animation: pop 1s forwards;
 
     &:hover {
       transform: scale(1.1);
       background-color: rgb(223, 223, 223);
     }
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -125,10 +151,13 @@
   justify-content: space-between;
   gap: 2rem;
   padding: 0 5rem;
-  // border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
   transition: all 0.3s;
   border-radius: 0;
+  transform: translateX(-80%);
+  transform-origin: left;
+  background-color: rgba($color: #000000, $alpha: 0);
 
-  // transform: scale(1.05);
-  background-color: rgba($color: #000000, $alpha: 0.025);
+  svg {
+    margin-left: auto;
+  }
 }

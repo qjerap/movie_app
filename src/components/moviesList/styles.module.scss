@@ -1,11 +1,11 @@
 @import "../../sass/mixins";
 
 .movies {
-  margin: 10rem 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 250px);
-  place-content: center;
-  grid-gap: 2rem;
+  padding: 0rem 0;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, 250px);
+  // place-content: center;
+  // grid-gap: 2rem;
 
   // @include respond(big-desktop) {
   //   grid-template-columns: repeat(6, 1fr);
@@ -17,10 +17,10 @@
   // @include respond(tab-port) {
   //   grid-template-columns: repeat(3, 1fr);
   // }
-  @include respond(phone) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 3rem 1rem;
-  }
+  // @include respond(phone) {
+  //   grid-template-columns: repeat(2, 1fr);
+  //   grid-gap: 3rem 1rem;
+  // }
 }
 
 .movie {
@@ -58,7 +58,7 @@
     transition: box-shadow 0.3s;
     width: 250px;
     height: 375px;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 
     @include respond(phone) {
       // width: 100%;

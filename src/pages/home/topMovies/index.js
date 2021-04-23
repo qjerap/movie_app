@@ -34,9 +34,9 @@ export default () => {
               }`}
               alt=""
             />
-            <div>
+            <div className={styles.mainCard_info}>
               <div>
-                <h2>{data.movies[data.activeMainCard].title}</h2>
+                <h1>{data.movies[data.activeMainCard].title}</h1>
                 <div className={styles.rating}>
                   <MdStars />
                   {data.movies[data.activeMainCard].vote_average}
@@ -59,9 +59,11 @@ export default () => {
                     onClick={switchMainCard}
                   >
                     {index === data.activeMainCard && <MdArrowBack />}
-                    <div>
-                      <h4>{movie.title}</h4>
-                    </div>
+                    {index != data.activeMainCard && (
+                      <div>
+                        <h4>{movie.title}</h4>
+                      </div>
+                    )}
                     {index != data.activeMainCard && (
                       <div className={styles.rating}>
                         <MdStars />
