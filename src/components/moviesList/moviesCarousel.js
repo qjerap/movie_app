@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { slideUp } from "../../tool/MotionVariants";
 import Carousel from "../carousel";
 
-import styles from "./styles.module.scss";
+import styles from "./stylesCarousel.module.scss";
 
 import { useEmblaCarousel } from "embla-carousel/react";
 import { PrevButton, NextButton } from "../carousel/EmblaCarouselButton.js";

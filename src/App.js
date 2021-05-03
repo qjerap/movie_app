@@ -11,6 +11,7 @@ import Home from "./pages/home";
 import Movies from "./components/moviesList";
 import Movie from "./pages/movie";
 import { AnimatePresence } from "framer-motion";
+import Search from "./pages/search";
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/movie/:id">
             <Movie />
+          </Route>
+          <Route path="/search/:input">
+            <Search />
           </Route>
           <Route path="/">
             <Home />

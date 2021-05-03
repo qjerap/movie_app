@@ -1,17 +1,25 @@
+@import "../../../sass/mixins";
+
 .header {
 }
 
 .grid {
-  margin-top: .1rem;
+  margin-top: 0.1rem;
   display: grid;
   grid-template-columns: 1fr 0.5fr 0.5fr;
   grid-template-rows: 1fr 1fr;
-  gap: .1rem;
-  height: 100%;
+  gap: 0.1rem;
+  height: 55rem;
+
+  @include respond(tab-land) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 }
 
-.grid > div {
-  cursor: pointer;
+.card_main,
+.card {
+  position: relative;
   transition: all 0.2s;
   overflow: hidden;
   background-color: black;
@@ -20,24 +28,113 @@
   img {
     object-fit: cover;
     width: 100%;
-    transition: all 0.2s;
+    transition: all 2s;
+    height: 100%;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
   }
 }
 
 .grid > div:hover {
   img {
-    opacity: 0.8;
-  }
-
-  .item_info {
-    bottom: 0;
+    // opacity: 0.8;
   }
 }
 
 .card_main {
   grid-row: 1 / span 2;
 
-  img {
-    height: 100%;
+  // @include respond(tab-land) {
+  //   height: 55rem;
+  // }
+}
+
+.card {
+  @include respond(tab-land) {
+    display: none;
+  }
+}
+
+.card__content {
+  --padding: 2rem;
+  padding: var(--padding);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    hsla(0, 0%, 0%, 0),
+    hsla(0, 0%, 0%, 0.3) 10%,
+    hsla(0, 0%, 0%, 1)
+  );
+  transform: translateY(calc(100% - 6rem));
+  transition: transform 0.5s ease;
+}
+
+.card__content > *:not(.card__title) {
+  opacity: 0;
+  transition: opacity 0.9s linear;
+}
+
+.card_main:hover .card__content > *,
+.card:hover .card__content > * {
+  opacity: 1;
+}
+
+.card_main:hover .card__content,
+.card:hover .card__content {
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.card__title {
+  position: relative;
+  color: var(--color-white);
+  font-size: var(--font-xl);
+  font-weight: 900;
+  width: max-content;
+}
+
+.card__title::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--padding) * -1);
+  bottom: -0.75rem;
+  height: 4px;
+  width: calc(100% + var(--padding));
+  background: var(--color-red);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
+}
+
+.card_main:hover .card__title::after,
+.card:hover .card__title::after {
+  transform: scaleX(1);
+}
+
+.card__body {
+  margin-top: var(--padding);
+  color: var(--color-white-900);
+  font-size: var(--font-l);
+}
+
+.card__button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: hsl(207, 19%, 9%);
+  background-color: var(--color-red);
+  margin-top: var(--padding);
+  padding: 0.75rem 1.25rem;
+  font-size: var(--font-l);
+  border-radius: 0.25rem;
+  font-weight: 400;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-white);
   }
 }

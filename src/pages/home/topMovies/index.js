@@ -4,16 +4,15 @@ import { MdStars, MdArrowBack } from "react-icons/md";
 import styles from "./styles.module.scss";
 
 export default () => {
-  useEffect(() => {
-    fetch(
+  useEffect(async () => {
+    const data = await fetch(
       `https://api.themoviedb.org/3/discover/movie?api_key=27530fdbc7f1713e26852c635183cc82&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&primary_release_year=2019&vote_count.gte=1000`
-    )
-      .then((res) => res.json())
-      .then((data) => setData({ movies: data.results, activeMainCard: 0 }));
+    );
+    const res = await data.json();
+    setData({ movies: res.results, activeMainCard: 0 });
   }, []);
 
   const [data, setData] = useState({});
-  console.log(data);
 
   const switchMainCard = (e) => {
     console.log(e.target.getAttribute("data-index"));

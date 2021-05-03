@@ -20,7 +20,7 @@ export const Movies = ({ url, movies, quantity = 99 }) => {
   }, []);
 
   return (
-    <motion.div className="container margin-T-B">
+    <motion.div className="margin-T-B">
       <div className={styles.movies}>
         {data.map((mov, index) => {
           if (quantity > index) {
