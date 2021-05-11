@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 export default () => {
@@ -25,7 +25,7 @@ export default () => {
             <div className={styles.card__content}>
               <div className={styles.card__title}>{data[0].title}</div>
               <div className={styles.card__body}>{data[0].overview}</div>
-              <Link className={styles.card__button}>See Details</Link>
+              <Link className={styles.card__button} to={`/movie/${data[0].id}`}>See Details</Link>
             </div>
           </div>
 
@@ -40,7 +40,12 @@ export default () => {
                 <div className={styles.card__content}>
                   <div className={styles.card__title}>{movie.title}</div>
                   <div className={styles.card__body}>{movie.overview}</div>
-                  <Link className={styles.card__button}>See Details</Link>
+                  <Link
+                    className={styles.card__button}
+                    to={`/movie/${movie.id}`}
+                  >
+                    See Details
+                  </Link>
                 </div>
               </div>
             );
