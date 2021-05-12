@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { opacity } from "../../../tool/MotionVariants";
 import styles from "./styles.module.scss";
 
 export default () => {
@@ -14,44 +16,56 @@ export default () => {
   const [data, setData] = useState([]);
 
   return (
-    <div className={styles.header}>
-      {data[5] && (
-        <div className={styles.grid}>
-          <div className={styles.card_main}>
-            <img
-              src={`https://image.tmdb.org/t/p/original/${data[0].backdrop_path}`}
-              alt=""
-            />
-            <div className={styles.card__content}>
-              <div className={styles.card__title}>{data[0].title}</div>
-              <div className={styles.card__body}>{data[0].overview}</div>
-              <Link className={styles.card__button} to={`/movie/${data[0].id}`}>See Details</Link>
-            </div>
-          </div>
-
-          {data.map((movie, index) => {
-            if (index > 4 || index === 0) return;
-            return (
-              <div className={styles.card}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
-                  alt=""
-                />
-                <div className={styles.card__content}>
-                  <div className={styles.card__title}>{movie.title}</div>
-                  <div className={styles.card__body}>{movie.overview}</div>
-                  <Link
-                    className={styles.card__button}
-                    to={`/movie/${movie.id}`}
-                  >
-                    See Details
-                  </Link>
-                </div>
+    <motion.div
+      className={styles.header}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      variants={opacity}
+    >
+      <Suspense fallback="loading...">
+        {data[5] && (
+          <div className={styles.grid}>
+            <div className={styles.card_main}>
+              <img
+                src={`https://image.tmdb.org/t/p/original/${data[0].backdrop_path}`}
+                alt=""
+              />
+              <div className={styles.card__content}>
+                <div className={styles.card__title}>{data[0].title}</div>
+                <div className={styles.card__body}>{data[0].overview}</div>
+                <Link
+                  className={styles.card__button}
+                  to={`/movie/${data[0].id}`}
+                >
+                  See Details
+                </Link>
               </div>
-            );
-          })}
-        </div>
-      )}
-    </div>
+            </div>
+            {data.map((movie, index) => {
+              if (index > 4 || index === 0) return;
+              return (
+                <div className={styles.card}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
+                    alt=""
+                  />
+                  <div className={styles.card__content}>
+                    <div className={styles.card__title}>{movie.title}</div>
+                    <div className={styles.card__body}>{movie.overview}</div>
+                    <Link
+                      className={styles.card__button}
+                      to={`/movie/${movie.id}`}
+                    >
+                      See Details
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </Suspense>
+    </motion.div>
   );
 };
