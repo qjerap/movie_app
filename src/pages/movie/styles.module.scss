@@ -79,11 +79,9 @@
     @include respond(tab-land) {
       width: 100%;
       flex-basis: 60%;
-
     }
     @include respond(phone) {
       margin-top: 0;
-
     }
 
     img {
@@ -99,6 +97,19 @@
       }
       @include respond(tab-port) {
         width: 80%;
+        margin: auto;
+      }
+    }
+
+    .skel_poster {
+      width: 403.6px;
+      height: 605.4px;
+      margin: auto;
+      margin-bottom: 15%;
+
+      @include respond(tab-port) {
+        width: 273.5px;
+        height: 410px;
         margin: auto;
       }
     }

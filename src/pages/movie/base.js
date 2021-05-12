@@ -13,7 +13,7 @@ export const Base = ({ data }) => {
     <div className="container ">
       <motion.div className={styles.overview}>
         <div className={styles.poster}>
-          {!loaded && <Skeleton height={683} width={455} />}
+          {!loaded && <Skeleton className={styles.skel_poster} />}
           <img
             src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}
             style={loaded ? {} : { display: "none" }}
