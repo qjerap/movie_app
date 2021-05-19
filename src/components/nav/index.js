@@ -1,9 +1,9 @@
 import React from "react";
 
 import Logo from "../logo";
-import Links from "./links";
 import Search from "../search";
-import Burger from "./burger";
+// import Links from "./links";
+// import Burger from "./burger";
 
 import styles from "./styles.module.scss";
 
@@ -13,8 +13,10 @@ export const Nav = () => {
       <div className={`${styles.nav} + container`}>
         <Logo />
         <Search />
-        <Links />
-        <Burger />
+        {
+          //  <Links />
+          //  <Burger />
+        }
       </div>
     </nav>
   );

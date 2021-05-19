@@ -29,7 +29,7 @@ export const Search = () => {
         value={searchInput}
         onChange={handleChange}
       />
-      <BiSearchAlt />
+      <BiSearchAlt onClick={handleSubmit}/>
     </form>
   );
 };

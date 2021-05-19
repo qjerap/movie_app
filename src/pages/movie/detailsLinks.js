@@ -11,7 +11,6 @@ export const DetailsLinks = ({
     <div className={styles.menu}>
       <ul className="container">
         {links?.map((link) => {
-          console.log(activeLink, link.toLowerCase());
           return (
             <li
               className={activeLink === link.toLowerCase() && styles.isActive}

@@ -2,7 +2,8 @@
 
 .search {
   position: relative;
-  width: 80%;
+  // width: 80rem;
+  width: 100%;
 
   input {
     position: relative;
@@ -48,8 +49,8 @@
 }
 
 .searchNav {
-  width: 30rem;
-  @include respond(phone) {
-    display: none;
-  }
+  // width: 30rem;
+  // @include respond(phone) {
+  //   display: none;
+  // }
 }

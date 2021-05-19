@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { opacity } from "../../../tool/MotionVariants";
+import { opacity } from "../../tool/MotionVariants";
 import styles from "./styles.module.scss";
 
 export default ({ children, title }) => {
