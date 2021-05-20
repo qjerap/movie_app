@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./details.module.scss";
 import { motion } from "framer-motion";
 import { slideHorizontal as variants } from "../../tool/MotionVariants";
+import profil from "../../assets/profil_not_found.png";
 
 import Carousel from "../../components/carousel";
 
@@ -24,7 +25,12 @@ export const Cast = ({ cast }) => {
                     <li className={styles.actorCard}>
                       <div className={styles.actorCard__imageContainer}>
                         <img
-                          src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`}
+                          className={ !actor.profile_path && styles.actorCard__imageNotFound}
+                          src={
+                            actor.profile_path
+                              ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
+                              : profil
+                          }
                           alt=""
                         />
                       </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { slideUp } from "../../tool/MotionVariants";
-
+import movieNotFound from "../../assets/movie_not_found.png";
 import styles from "./styles.module.scss";
 
 export const Movies = ({ url, movies, quantity = 99 }) => {
@@ -36,7 +36,12 @@ export const Movies = ({ url, movies, quantity = 99 }) => {
                     <span className={styles.notation}>{mov.vote_average}</span>
                   )}
                   <img
-                    src={`https://image.tmdb.org/t/p/w500/${mov.poster_path}`}
+                    className={!mov.poster_path && styles.movieNotFound}
+                    src={
+                      mov.poster_path
+                        ? `https://image.tmdb.org/t/p/w500/${mov.poster_path}`
+                        : movieNotFound
+                    }
                     alt=""
                     width="200px"
                   />

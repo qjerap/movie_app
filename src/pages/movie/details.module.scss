@@ -7,8 +7,6 @@
   align-items: center;
 }
 
-
-
 // CAST
 
 .actors {
@@ -55,6 +53,10 @@
     span {
       color: var(--color-red);
     }
+  }
+
+  &__imageNotFound {
+    object-fit: contain;
   }
 }
 

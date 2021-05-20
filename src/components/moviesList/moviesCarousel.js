@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { slideUp } from "../../tool/MotionVariants";
 import Carousel from "../carousel";
-
+import movieNotFound from "../../assets/movie_not_found.png";
 import styles from "./stylesCarousel.module.scss";
 
 import { useEmblaCarousel } from "embla-carousel/react";
@@ -68,9 +68,12 @@ export const Movies = ({ title, url, movies, quantity = 99 }) => {
                       </span>
                     )}
                     <img
-                      src={`https://image.tmdb.org/t/p/w500/${mov.poster_path}`}
-                      alt=""
-                      width="200px"
+                      className={!mov.poster_path && styles.movieNotFound}
+                      src={
+                        mov.poster_path
+                          ? `https://image.tmdb.org/t/p/w500/${mov.poster_path}`
+                          : movieNotFound
+                      }
                     />
                     <h1>{mov.title || mov.name}</h1>
                   </motion.div>

@@ -108,9 +108,11 @@
     gap: 5rem;
 
     @include respond(phone) {
-      flex-direction: column;
+      flex-wrap: wrap;
+      // flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: 2rem;
     }
   }
 

@@ -108,6 +108,12 @@
   }
 }
 
+.movieNotFound {
+  object-fit: cover;
+  filter: grayscale(100);
+  opacity: 0.7;
+}
+
 @keyframes back-to-top {
   0% {
     z-index: -1;
